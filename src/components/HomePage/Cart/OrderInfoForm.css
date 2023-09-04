@@ -1,0 +1,80 @@
+.form {
+  margin: 1rem 0;
+  height: 70vh;
+  overflow: auto;
+}
+
+.checkoutInputContainer {
+  background-color: antiquewhite;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.control {
+  height: 10vh;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.control label {
+  font-weight: bold;
+  /* margin-bottom: 0.25rem; */
+  margin: 0.5rem;
+  display: block;
+}
+
+.control input {
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 20rem;
+  max-width: 100%;
+  padding: 0.25rem;
+  margin: 0.25rem;
+}
+
+.control p {
+  color: red;
+  margin-left: 0.5rem;
+}
+
+.invalid label {
+  /* color: #ca3e51; */
+}
+
+.invalid input {
+  border-color: #aa0b20;
+  background-color: #ffeff1;
+}
+
+.checkoutButtonStyle {
+  padding: 1rem;
+  margin: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cancelCheckoutButton {
+  border-radius: 15px;
+  border: 2px solid indianred;
+  padding: 0.25rem 1.5rem;
+  background-color: white;
+  color: indianred;
+}
+
+.cancelCheckoutButton:hover {
+  border: 2px solid  #AE0000;
+  background-color: #AE0000;
+  color: white;
+}
+
+.confirmCheckoutButton {
+  border-radius: 15px;
+  padding: 0.25rem 1.5rem;
+  background-color: indianred;
+  color: white;
+}
+
+.confirmCheckoutButton:hover {
+  background-color:	#AE0000;
+}

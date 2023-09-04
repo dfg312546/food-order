@@ -1,0 +1,48 @@
+.cartItemsStyle {
+  list-style: none;
+  height: 70vh;
+  overflow-y: auto;
+}
+
+.totalAmountStyle {
+  margin: 30px;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  
+}
+
+.cartButtonsStyle {
+  padding: 1rem;
+  margin: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cartCloseButton {
+
+  border-radius: 15px;
+  border: 2px solid indianred;
+  padding: 0.25rem 1.5rem;
+  background-color: white;
+  color: indianred;
+}
+
+.cartCloseButton:hover {
+  border: 2px solid  #AE0000;
+  background-color: #AE0000;
+  color: white;
+}
+
+.cartOrderButton {
+  border-radius: 15px;
+  padding: 0.25rem 1.5rem;
+
+  background-color: indianred;
+  color: white;
+}
+
+.cartOrderButton:hover {
+  background-color:	#AE0000;
+
+}

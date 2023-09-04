@@ -1,0 +1,19 @@
+#promotion-section {
+    background-color: black;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* 水平置中 */
+    height: 90vh;
+    width: 100vw;
+}
+
+.container {
+
+    text-align: center;
+    max-height: 90vh;
+    margin: 0 2vw;
+    flex-grow: 1;
+}

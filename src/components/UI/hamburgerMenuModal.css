@@ -1,0 +1,63 @@
+.backdrop3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -100;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.show {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 100;
+}
+
+.modal3 {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  height: 100vh;
+  background-color:	#F0F0F0;
+  padding: 1rem;
+  border-radius: 0 14px 14px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 101;
+  transition: left 0.3s ease-in-out;
+  overflow: auto;
+}
+
+.open {
+  left: 0;
+}
+
+
+.content3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* @media (min-width: 768px) {
+  .modal {
+    width: 40rem;
+    left: calc(50% - 20rem);
+  }
+} */
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

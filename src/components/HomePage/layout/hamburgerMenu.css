@@ -1,0 +1,26 @@
+.hamburgerMenuHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburgerMenuUl {
+  text-align: left;
+}
+
+.hamburgerMenuli{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  list-style: none;
+}
+
+.hamburgerMenuli span {
+  font-size: 75%;
+}
+
+.hamburgerMenuli .hamburgerMenuIcon{
+  width:30px;
+  height: auto;
+  margin: 10px 10px 0px 5px;
+}

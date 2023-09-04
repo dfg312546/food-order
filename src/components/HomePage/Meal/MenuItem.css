@@ -1,0 +1,42 @@
+
+
+.menuContainer {
+    background-color: 	#272727;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:  0;
+}
+
+.imgStyle {
+    width: 23vw;
+    border-radius: 5px 5px 0 0;
+    max-height: 40vh;
+}
+
+.labelStyle {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 5vh;
+    color: whitesmoke;
+}
+
+.descriptionStyle{
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.btnStyle {
+    width: 20%;
+    height: 5vh;
+    margin-top: 1vh;
+}
+
+.btnStyle:hover {
+    color: black;
+    background-color: khaki;
+    border-color: black;
+}
