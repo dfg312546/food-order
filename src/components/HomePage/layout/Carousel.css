@@ -12,8 +12,8 @@
   
   .image {
     position: absolute;
-    height: 84vh;
-    top: 0;
+    height: 80vh;
+    top: 2vh;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -49,12 +49,16 @@
     right: 5%;
   }
 
-  .indexUl{
-    top:90%;
-    left:45%;
+  .indexUl{    
     position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 10%;
     list-style: none;
     display: flex;
+    justify-content: center;
   }
 
   .indexLi{

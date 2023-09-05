@@ -71,6 +71,8 @@ function CartItem (props) {
       <li className='cartItemStyle'>
         <div className='cartItemTextStyle'>
           商品名稱：{'套餐' + props.id}
+
+          
           <div className='cartItemNumberStyle'>
           數量：
           <Button className='cartButtonStyle' onClick={calcelCartItem}>

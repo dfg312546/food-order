@@ -98,7 +98,7 @@ function MainNavigation () {
     </li>
     <li>
       <NavLink
-        to="/aboutUs"
+        to="/contact"
         className={({ isActive }) =>
           isActive ? 'active' : undefined
         }

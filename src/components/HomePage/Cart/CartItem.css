@@ -4,23 +4,21 @@
   background-color: antiquewhite;
   border-radius: 10px;
   padding: 1rem;
-  margin: 5px 30px 20px 30px;
+  margin: 5px 15px 20px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .cartItemTextStyle {
-
   width: 40%;
-  /* text-align: center; */
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .propsAmount {
-  
   font-size: 2rem;
   margin: 0 1rem;
 }
@@ -65,4 +63,28 @@
   color:red;
   background-color: antiquewhite;
   border: none
+}
+
+@media  (max-width:550px) {
+  .cartItemTextStyle {
+    flex: 1;
+    font-size: 0.8rem;
+  }
+  .cartItemNumberStyle {
+    font-size: 1rem;
+  }
+  .propsAmount {
+    font-size: 1rem;
+    margin: 0 0.25rem;
+  }
+  .cartButtonStyle{
+    font-size: 0.5rem;
+    padding: 0.15rem 0.25rem;
+  }
+  .cartItemPriceStyle {
+    font-size: 0.85rem;
+  }
+  .removeCartItemButtonStyle {
+    font-size: 0.45rem;
+  }
 }

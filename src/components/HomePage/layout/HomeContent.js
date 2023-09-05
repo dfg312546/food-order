@@ -1,5 +1,4 @@
 import { useState } from "react";
-import ContextProvider from "../../../store/contextProvider";
 import Cart from "../Cart/Cart";
 import Carousel from "./Carousel";
 import AddFeedback from "../Meal/addFeedback";
@@ -22,14 +21,12 @@ function HomeContent () {
 
   return (
     <>
-    <ContextProvider>
       {cartIsShown && <Cart hideCartHandler={hideCartHandler}/>}
       {addFeedback && <AddFeedback/>}
       {<HamburgerMenu hamburgerMenu={hamburgerMenu} setHamburgerMenu={setHamburgerMenu}/>}
       <Header showCartHandler={showCartHandler} setHamburgerMenu={setHamburgerMenu}/>
       <Carousel />
       <PromotionSection setAddFeedback={setAddFeedback}/>
-    </ContextProvider>
     </>
   )
 };

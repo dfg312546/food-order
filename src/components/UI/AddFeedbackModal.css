@@ -30,13 +30,6 @@
   padding: 1rem;
 }
 
-/* @media (min-width: 768px) {
-  .modal {
-    width: 40rem;
-    left: calc(50% - 20rem);
-  }
-} */
-
 @keyframes slide-down {
   from {
     opacity: 0;
@@ -45,5 +38,11 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media  (max-width:550px) {
+  .content2 {
+    font-size: 1rem;
   }
 }

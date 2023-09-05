@@ -6,12 +6,14 @@
 
 .hamburgerMenuUl {
   text-align: left;
+  margin: 20px auto;
 }
 
 .hamburgerMenuli{
   display: flex;
   justify-content: left;
   align-items: center;
+  margin: 10px auto;
   list-style: none;
 }
 
