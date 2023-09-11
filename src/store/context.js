@@ -8,7 +8,10 @@ const StateContext = React.createContext({
     amountInCartButton:0,
     setAmountInCartButton:(item) => {},
     addItem:(item) => {},
-    // clearCart: () => {}
+    user:null,
+    isLogIn:null,
+    setIsLogIn:() => {},
+    logOut:() => {}
 });
 
 export default StateContext;

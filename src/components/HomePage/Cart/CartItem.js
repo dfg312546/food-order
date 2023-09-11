@@ -1,12 +1,8 @@
 import './CartItem.css'
 import Button from '../../UI/Button'
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { useContext } from 'react';
 import StateContext from '../../../store/context';
-import {faPlus,faMinus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-library.add(faPlus,faMinus)
+import { FaPlus,FaMinus } from "react-icons/fa6";
 
 function CartItem (props) {
   const Ctx = useContext(StateContext);
@@ -76,11 +72,11 @@ function CartItem (props) {
           <div className='cartItemNumberStyle'>
           數量：
           <Button className='cartButtonStyle' onClick={calcelCartItem}>
-            <FontAwesomeIcon icon="fa-solid fa-minus" />
+            <FaMinus />
           </Button>
           <span className='propsAmount'>{props.amount}</span>
           <Button className='cartButtonStyle' onClick={addCartItem}>
-            <FontAwesomeIcon icon="fa-solid fa-plus"/>
+            <FaPlus/>
           </Button>
           </div>
         </div>

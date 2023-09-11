@@ -1,10 +1,6 @@
 import HamburgerMenuModal from "../../UI/hamburgerMenuModal";
 import './hamburgerMenu.css'
-
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCheck,faFire,faThumbsUp,faGifts,faBars,faCircleXmark } from '@fortawesome/free-solid-svg-icons';
-library.add(faUserCheck,faFire,faThumbsUp,faGifts,faBars,faCircleXmark);
+import { FaUserCheck,FaFire,FaThumbsUp,FaCircleXmark, FaGifts } from "react-icons/fa6";
 
 function HamburgerMenu(props) {
 
@@ -30,24 +26,24 @@ function HamburgerMenu(props) {
   <HamburgerMenuModal hamburgerMenu={props.hamburgerMenu} setHamburgerMenu={props.setHamburgerMenu}>
     <header className="hamburgerMenuHeader">
       <h1>LOGO</h1>
-      <FontAwesomeIcon icon={faCircleXmark} onClick={closeHamburgerMenu}/>
+      <FaCircleXmark onClick={closeHamburgerMenu}/>
     </header>
 
     <ul className='hamburgerMenuUl'>
       <li className='hamburgerMenuli' onClick={handleClick("promotion")}>
-        <span className='hamburgerMenuIcon'><FontAwesomeIcon icon={faFire} /></span>
+        <span className='hamburgerMenuIcon'><FaFire /></span>
         <span>Promotions</span>
       </li>
       <li className='hamburgerMenuli' onClick={handleClick("release")}>
-        <span className='hamburgerMenuIcon'><FontAwesomeIcon icon={faThumbsUp} /></span>
+        <span className='hamburgerMenuIcon'><FaThumbsUp /></span>
         <span>Newly release</span>
       </li>
       <li className='hamburgerMenuli'>
-        <span className='hamburgerMenuIcon'><FontAwesomeIcon icon={faGifts} /></span>
+        <span className='hamburgerMenuIcon'><FaGifts /></span>
         <span>Category</span>
       </li>
       <li className='hamburgerMenuli'>
-        <span className='hamburgerMenuIcon'><FontAwesomeIcon icon="fa-solid fa-user-check" /></span>
+        <span className='hamburgerMenuIcon'><FaUserCheck /></span>
         <span>Members only</span>
       </li>
     </ul>

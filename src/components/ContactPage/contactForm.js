@@ -9,15 +9,18 @@ function ContactForm() {
       userName: '',
       userEmail: '',
       userPhone: '',
+      userFeedback:'',
     }
   });
 
 
-  const submitForm = (data) => {
+  const submitForm = (data,e) => {
+    e.preventDefault();
     console.log(data)
     setValue("userName", '');
     setValue("userEmail", '');
     setValue("userPhone", '');
+    setValue("userFeedback", '');
   };
 
   // console.log(watch());
@@ -38,7 +41,7 @@ function ContactForm() {
           className="inputField"
           {...register("userName", {required: '此欄位必填！'})} 
           placeholder='姓名'
-          autocomplete="off"
+          autoComplete="off"
         />
         <p className="inputErrot">{errors.userName?.message}</p>
       </div>
@@ -50,7 +53,7 @@ function ContactForm() {
         className="inputField"
         {...register("userEmail", {required: '此欄位必填！'})}
         placeholder='電子郵件'
-        autocomplete="off"
+        autoComplete="off"
         />
         <p className="inputErrot">{errors.userEmail?.message}</p>
       </div>
@@ -62,12 +65,23 @@ function ContactForm() {
         className="inputField"
         {...register("userPhone",)}
         placeholder='聯絡電話'
-        autocomplete="off"
+        autoComplete="off"
         />
       </div>
 
+      <div className="inputContainer">
+        <label className="inputLabel">Problems & Suggestion <span className="inputErrot">*</span></label>
+        <textarea 
+        className="inputField-feedback"
+        {...register("userFeedback",{required: '此欄位必填！'})}
+        placeholder='問題與建議'
+        autoComplete="off"
+        />
+        <p className="inputErrot">{errors.userFeedback?.message}</p>
+      </div>
 
-      <button type="submit" className="contactFormBtn">送出</button>
+
+      <button type="submit" className="contactFormBtn">Send</button>
     </form>
     </div>
   )

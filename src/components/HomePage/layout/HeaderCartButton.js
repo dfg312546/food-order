@@ -1,11 +1,7 @@
 import './HeaderCartButton.css'
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 import StateContext from '../../../store/context';
-
-library.add(faCartShopping);
+import { FaCartShopping } from "react-icons/fa6";
 
 function HeaderCartButton (props) {
     const Ctx = useContext(StateContext)
@@ -13,7 +9,7 @@ function HeaderCartButton (props) {
     return (
     <button className='button' onClick={props.showCartHandler}>
         <span className='icon'>
-            <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
+            <FaCartShopping />
         </span>
         <span className='text'>我的購物車</span>
         <span className='badge'>

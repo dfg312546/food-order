@@ -1,11 +1,6 @@
 import { useState } from 'react';
 import './qaItem.css'
-
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown,faXmark } from '@fortawesome/free-solid-svg-icons';
-
-library.add(faChevronDown,faXmark);
+import { FaXmark,FaChevronDown } from "react-icons/fa6";
 
 function QAItem (props) {
   const [isActive,setIsActive] = useState(false);
@@ -27,8 +22,8 @@ function QAItem (props) {
     </p>
 
     <button className="faq-toggle" onClick={toggleHandler}>
-      <FontAwesomeIcon className="fas fa-chevron-down" icon="fa-solid fa-chevron-down" />
-      <FontAwesomeIcon className="fas fa-times" icon="fa-solid fa-xmark" />
+      <FaChevronDown className="fas fa-chevron-down" />
+      <FaXmark className="fas fa-times" />
     </button>
   </div>
   )

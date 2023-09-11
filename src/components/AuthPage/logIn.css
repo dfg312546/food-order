@@ -1,0 +1,71 @@
+.logInFormContainer {
+  height:92vh;
+  background-color: black;
+}
+
+.logInForm {
+  padding: 30px 0;
+}
+
+.logInContainer {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.logInLabel {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.logInInput {
+  width:200px;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.logInContainer .inputErrot {
+  color:red;
+  margin-top: 10px;
+}
+
+.logInBtnContainer {
+  /* display: flex; */
+  text-align: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.logInBtn {
+  padding: 0.5rem;
+  margin: 10px 10px;
+
+}
+.logInBtn:hover {
+  color: black;
+  background-color: khaki;
+}
+
+.logInBtnContainer p {
+  font-weight: bold;
+  color:white;
+  margin: 10px;
+  
+}
+
+.signUpBtn {
+  padding: 0.5rem;
+  margin: 10px 10px;
+}
+.signUpBtn:hover {
+  background-color: khaki;
+}
+.signUpBtn a {
+  color: black;
+  text-decoration: none;
+}

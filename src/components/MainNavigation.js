@@ -1,4 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import StateContext from '../store/context';
+import { useContext } from 'react';
+import { NavLink,Link } from 'react-router-dom';
 import { FaHouseChimney } from "react-icons/fa6";
 import { MdPlace,MdQuestionMark } from "react-icons/md";
 import { BiSolidMessageEdit } from "react-icons/bi";
@@ -6,6 +8,8 @@ import Button from "./UI/Button";
 import './MainNavigation.css'
 
 function MainNavigation () {
+  const Ctx = useContext(StateContext);
+
   return (
   <>
   <nav className='mainNavStyle'>
@@ -54,10 +58,14 @@ function MainNavigation () {
         </li>
     </ul>
     <section>
+        {Ctx.isLogIn ? 
+          <p>Hello!<br /> {Ctx.user.email}</p> : 
+          <Button className='logInButtonStyle'>
+            <Link to='/login'>Log In</Link>
+          </Button>}
 
-        <Button className='logInButtonStyle'>
-            Log In
-        </Button>
+          {Ctx.isLogIn && <Button onClick={Ctx.logOut} className='logInButtonStyle'>Log Out</Button>}
+
     </section>
   </nav>
 

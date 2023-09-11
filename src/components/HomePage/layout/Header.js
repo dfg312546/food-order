@@ -1,12 +1,8 @@
 import './Header.css'
 import HeaderCartButton from './HeaderCartButton';
-// import HamburgerMenu from './hamburgerMenu'
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCheck,faFire,faThumbsUp,faGifts,faBars } from '@fortawesome/free-solid-svg-icons';
+import { FaUserCheck,FaFire,FaThumbsUp,FaBars, FaGifts } from "react-icons/fa6";
 
 
-library.add(faUserCheck,faFire,faThumbsUp,faGifts,faBars);
 
 
 function Header (props) {
@@ -34,24 +30,24 @@ function Header (props) {
 
         <ul className='headerUl'>
             <li className='li' onClick={handleClick("promotion")}>
-                <span className='headerIcon'><FontAwesomeIcon icon={faFire} /></span>
+                <span className='headerIcon'><FaFire /></span>
                 <span>Promotions</span>
             </li>
             <li className='li' onClick={handleClick("release")}>
-                <span className='headerIcon'><FontAwesomeIcon icon={faThumbsUp} /></span>
+                <span className='headerIcon'><FaThumbsUp /></span>
                 <span>Newly release</span>
             </li>
             <li className='li'>
-                <span className='headerIcon'><FontAwesomeIcon icon={faGifts} /></span>
+                <span className='headerIcon'><FaGifts /></span>
                 <span>Category</span>
             </li>
             <li className='li'>
-                <span className='headerIcon'><FontAwesomeIcon icon="fa-solid fa-user-check" /></span>
+                <span className='headerIcon'><FaUserCheck /></span>
                 <span>Members only</span>
             </li>
         </ul>
 
-        <FontAwesomeIcon onClick={clickHamburgerMenu} className='hamburgermenu' icon={faBars} />
+        <FaBars onClick={clickHamburgerMenu} className='hamburgermenu' />
 
         <h1 className='mobileLogo'>LOGO</h1>
 

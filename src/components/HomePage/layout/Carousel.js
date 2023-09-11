@@ -34,7 +34,7 @@ const imgs = [
         <button className='nextBtn' onClick={nextSlide}>&#10095;</button>
         <ul className='indexUl'>
           {imgs.map((img, index) => (
-            <li className={`indexLi ${index === currentIndex ? 'activeIndex' : ''}`}></li>
+            <li key={index} className={`indexLi ${index === currentIndex ? 'activeIndex' : ''}`}></li>
           ))}
         </ul>
       </div>
