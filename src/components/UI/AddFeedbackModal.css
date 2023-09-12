@@ -10,9 +10,9 @@
 
 .modal2 {
   position: fixed;
-  top: 25%;
-  left: 25%;
-  width: 50%;
+  top: 30%;
+  left: 34%;
+  width: 33%;
   /* height: 50%; */
   background-color: white;
   padding: 1rem;
@@ -44,5 +44,10 @@
 @media  (max-width:550px) {
   .content2 {
     font-size: 1rem;
+  }
+  .modal2 {
+    top: 30%;
+    left: 5%;
+    width: 90%;
   }
 }

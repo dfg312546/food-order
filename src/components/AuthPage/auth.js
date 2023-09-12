@@ -17,9 +17,11 @@ export const loginEmailPassword = async (email,password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
     console.log("Successfully logged in with user:", user);
+    return user;
   }
   catch(error) {
-    console.log(error)
+    console.log(error);
+    throw error;
   }
 }
 
@@ -28,9 +30,11 @@ export const createAccount = async (email,password) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
     console.log("Successfully created account for user:", user);
+    return user;
   }
   catch(error) {
-    console.log(error)
+    console.log(error);
+    throw error;
   }
 }
 

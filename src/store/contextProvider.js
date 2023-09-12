@@ -24,7 +24,6 @@ function ContextProvider (props) {
   const [isLogIn,setIsLogIn] = useState(false)
   const [userContent,setUserContent] = useState(null)
 
-
   function addItemToCart (order) {
     const cartItemExisting = cartItems.findIndex(cartItem => cartItem.id === order.id)
     
@@ -37,18 +36,29 @@ function ContextProvider (props) {
           return cartItem;
         });
         console.log(updatedCartItems);
-        setAmountInCartButton(updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount, 0));
+        const newAmountInCartButton = updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount, 0);
+        setAmountInCartButton(newAmountInCartButton);
+        //儲存到localstorage
+        isLogIn && localStorage.setItem("cartItems",JSON.stringify(updatedCartItems));
+        isLogIn && localStorage.setItem("amountInCartButton",JSON.stringify(newAmountInCartButton));
+
         return updatedCartItems;
       });
     } else {
       setCartItems(prevCartState => {
         const updatedCartItems = [...prevCartState, { ...order }];
-        setAmountInCartButton(updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount, 0));
+        const newAmountInCartButton = updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount, 0);
+        setAmountInCartButton(newAmountInCartButton);
+        //儲存到localstorage
+        isLogIn && localStorage.setItem("cartItems",JSON.stringify(updatedCartItems));
+        isLogIn && localStorage.setItem("amountInCartButton",JSON.stringify(newAmountInCartButton));
+
         return updatedCartItems;
       });      
     };
     
     setTotalAmount(prevTotalAmountState => {
+      isLogIn && localStorage.setItem("totalAmount",JSON.stringify(prevTotalAmountState + order.price));//儲存到localstorage
       return (
         prevTotalAmountState + order.price // 添加商品的價格到總金額
       );
@@ -57,12 +67,18 @@ function ContextProvider (props) {
     
   };
 
+  console.log(JSON.parse(localStorage.getItem("cartItems")))
+
   useEffect(() => {
     const monitorAuthState = onAuthStateChanged(auth, user => {
       if (user) {
         console.log(user);
-        setIsLogIn(true);
         setUserContent(user);
+        setIsLogIn(true);
+        //儲存到localstorage，讓登入的使用者不會遺失購物車內容
+        localStorage.getItem("cartItems") && setCartItems(JSON.parse(localStorage.getItem("cartItems")));
+        localStorage.getItem("amountInCartButton") && setAmountInCartButton(JSON.parse(localStorage.getItem("amountInCartButton")));
+        localStorage.getItem("totalAmount") && setTotalAmount(JSON.parse(localStorage.getItem("totalAmount")));
       }
     });
     return () => monitorAuthState();
@@ -74,17 +90,18 @@ function ContextProvider (props) {
   }
   
   
+  
 
   const context = {
     //購物車內state
     itemsInCart:cartItems,
     setItemsInCart:setCartItems,
+    addItem:addItemToCart,
     totalAmount:totalAmount,
     setTotalAmount:setTotalAmount,
-    //nav上的state
+    //nav bar上的state
     amountInCartButton:amountInCartButton,
     setAmountInCartButton:setAmountInCartButton,
-    addItem:addItemToCart,
     //以下auth
     user:userContent,
     isLogIn:isLogIn,

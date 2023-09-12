@@ -1,17 +1,17 @@
 .form {
-  margin: 1rem 0;
-  height: 70vh;
+  margin: 1rem 0 0 0;
   overflow: auto;
 }
 
 .checkoutInputContainer {
   background-color: antiquewhite;
+  padding-bottom: 30px;
   border-radius: 10px;
   overflow: auto;
 }
 
 .control {
-  height: 10vh;
+
   padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
@@ -21,6 +21,10 @@
   /* margin-bottom: 0.25rem; */
   margin: 0.5rem;
   display: block;
+}
+
+.control label span {
+  color: red;
 }
 
 .control input {

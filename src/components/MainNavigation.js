@@ -59,7 +59,7 @@ function MainNavigation () {
     </ul>
     <section>
         {Ctx.isLogIn ? 
-          <p>Hello!<br /> {Ctx.user.email}</p> : 
+          <p>Hello !<br /> {Ctx.user.email}</p> : 
           <Button className='logInButtonStyle'>
             <Link to='/login'>Log In</Link>
           </Button>}

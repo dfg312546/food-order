@@ -3,11 +3,18 @@ import { Link } from 'react-router-dom';
 import { loginEmailPassword as logInHandler } from "./auth";
 import './logIn.css'
 import StateContext from "../../store/context";
-import { useContext } from 'react';
+import { useContext,useState } from 'react';
 import Button from "../UI/Button";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import  Spinner from 'react-bootstrap/Spinner';
+import Alert from 'react-bootstrap/Alert';
+
 
 function LogIn () {
   const Ctx = useContext(StateContext);
+  const [isError, setIsError] = useState(false);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [errorMessage,setErrorMessage] = useState('')
 
   const { register, handleSubmit, setValue, formState: {errors} } = useForm({
     defaultValues: {
@@ -16,19 +23,38 @@ function LogIn () {
     }
   });
 
-  const submitForm = (data) => {
-    console.log(data)
-    logInHandler(data.userEmail,data.userPasswords)
-    setValue("userEmail", '');
-    setValue("userPasswords", '');
-    Ctx.setIsLogIn(true)
+  const submitForm = async (data) => {
+      try {
+        console.log(data);
+        setIsLoggingIn(true);
+        await logInHandler(data.userEmail,data.userPasswords);
+        Ctx.setIsLogIn(true);
+    } catch (error) {
+        setIsError(true);
+        if (error.code === 'auth/user-not-found') {
+          setErrorMessage('User not found. Please check your email.');
+        } else if (error.code === 'auth/wrong-password') {
+          setErrorMessage('Wrong password. Please check your password.');
+        } else {
+          setErrorMessage('An error occurred. Please try again later.');
+        }
+        console.log(error);
+    } finally {
+        setIsLoggingIn(false);
+        setValue("userEmail", '');
+        setValue("userPasswords", '');
+    }
   };
-
-  
 
   return (
     <div className="logInFormContainer">
-      <form className="logInForm" onSubmit={handleSubmit(submitForm)}>
+      {isLoggingIn ? 
+
+      (<Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>) :
+
+      (<form className="logInForm" onSubmit={handleSubmit(submitForm)}>
 
         <div className="logInContainer">
           <label className="logInLabel">Email<span className="inputErrot"> *</span></label>
@@ -63,7 +89,12 @@ function LogIn () {
           </Button>
         </div>
 
-      </form>
+      </form>)};
+
+      {isError &&         
+        <Alert key='danger' variant='danger'>
+          ERROR : {errorMessage}
+        </Alert>};
     </div>
   )
 }

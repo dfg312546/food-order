@@ -2,6 +2,8 @@ import { useRef,useState,useContext } from 'react'
 import StateContext from '../../../store/context';
 import Button from '../../UI/Button'
 import './OrderInfoForm.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Spinner from 'react-bootstrap/Spinner';
 
 function isEmpty (value) {
   return value.trim() === '';
@@ -68,6 +70,7 @@ function OrderInfoForm (props) {
     Ctx.setItemsInCart([]);
     Ctx.setTotalAmount(0);
     Ctx.setAmountInCartButton(0);
+    localStorage.clear()
 
     setCheckoutDone(!checkoutDone)
   };
@@ -89,19 +92,19 @@ function OrderInfoForm (props) {
     <form className='form' onSubmit={confirmHandler}>
       <div className='checkoutInputContainer'>
         <div className={nameControlClasses}>
-          <label htmlFor='name'>您的姓名 *</label>
+          <label htmlFor='name'>您的姓名 <span>*</span></label>
           <input type='text' id='name' ref={nameInputRef}/>
           {!formInputsValidity.name && <p>請輸入姓名！</p>}
         </div>
 
         <div className={streetControlClasses}>
-          <label htmlFor='street'>寄送地址 *</label>
+          <label htmlFor='street'>寄送地址 <span>*</span></label>
           <input type='text' id='street' ref={streetInputRef}/>
           {!formInputsValidity.street && <p>請輸入寄送地址！</p>}
         </div>
 
         <div className={emailControlClasses}>
-          <label htmlFor="email">電子郵件 *</label>
+          <label htmlFor="email">電子郵件 <span>*</span></label>
           <input type='text' id='email' ref={emailInputRef}/>
           {!formInputsValidity.email && <p>請輸入電子郵件！</p>}
         </div>
@@ -114,7 +117,9 @@ function OrderInfoForm (props) {
     </form>}
 
     {!checkoutDone && isSubmitting && 
-    <div>訂單發送中</div>}
+    <Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </Spinner>}
 
     {checkoutDone && isSubmitting &&
     <div>

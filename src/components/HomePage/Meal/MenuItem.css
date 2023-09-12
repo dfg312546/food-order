@@ -7,7 +7,7 @@
     background-color: 	#272727;
     border-radius: 5px;
     align-items: center;
-    margin:  0 40px;
+    margin:  10px 40px;
 }
 
 .imgStyle {
@@ -43,7 +43,9 @@
 }
 
 @media (max-width:1250px ) {
-
+    .menuContainer {
+        width: 250px;
+    }
 }
 
 .mobileMenuContainer {

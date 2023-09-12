@@ -19,10 +19,14 @@ function CartItem (props) {
         }
         return item; // 不是目標物件，保持不變
       });
-
-      Ctx.setTotalAmount(updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount * item.price, 0));
-
-      Ctx.setAmountInCartButton(updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount, 0));
+      const newTotalAmount = updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount * item.price, 0);
+      Ctx.setTotalAmount(newTotalAmount);
+      const newAmountInCartButton = updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount, 0);
+      Ctx.setAmountInCartButton(newAmountInCartButton);
+      //儲存到localstorage
+      Ctx.isLogIn && localStorage.setItem("cartItems",JSON.stringify(updatedCartItems));
+      Ctx.isLogIn && localStorage.setItem("amountInCartButton",JSON.stringify(newAmountInCartButton));
+      Ctx.isLogIn && localStorage.setItem("totalAmount",JSON.stringify(newTotalAmount));
 
       return updatedCartItems;
     });
@@ -40,10 +44,14 @@ function CartItem (props) {
         }
         return item; // 不是目標物件，保持不變
       });
-
-      Ctx.setTotalAmount(updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount * item.price, 0));
-
-      Ctx.setAmountInCartButton(updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount, 0));
+      const newTotalAmount = updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount * item.price, 0)
+      Ctx.setTotalAmount(newTotalAmount);
+      const newAmountInCartButton = updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount, 0)
+      Ctx.setAmountInCartButton(newAmountInCartButton);
+      //儲存到localstorage
+      Ctx.isLogIn && localStorage.setItem("cartItems",JSON.stringify(updatedCartItems));
+      Ctx.isLogIn && localStorage.setItem("amountInCartButton",JSON.stringify(newAmountInCartButton));
+      Ctx.isLogIn && localStorage.setItem("totalAmount",JSON.stringify(newTotalAmount));
 
       return updatedCartItems;
     });
@@ -53,10 +61,14 @@ function CartItem (props) {
     const updatedCartItems = Ctx.itemsInCart.filter(item => item.id !== props.id);
 
     Ctx.setItemsInCart(updatedCartItems);
+    Ctx.isLogIn && localStorage.setItem("cartItems",JSON.stringify(updatedCartItems));
 
-    Ctx.setAmountInCartButton(updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount, 0));
+    const newAmountInCartButton = updatedCartItems.reduce((totalAmount, item) => totalAmount + item.amount, 0)
+    Ctx.setAmountInCartButton(newAmountInCartButton);
+    Ctx.isLogIn && localStorage.setItem("amountInCartButton",JSON.stringify(newAmountInCartButton));
 
     Ctx.setTotalAmount(prevTotalAmountState => {
+      Ctx.isLogIn && localStorage.setItem("totalAmount",JSON.stringify(prevTotalAmountState - props.price * props.amount));
       return prevTotalAmountState - props.price * props.amount;
     });
   };
