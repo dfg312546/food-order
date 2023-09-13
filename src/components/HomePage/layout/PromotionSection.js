@@ -2,10 +2,11 @@ import { useQuery } from '@tanstack/react-query';
 import ScreenSection from "../../UI/ScreenSection";
 import MenuItem from "../Meal/MenuItem";
 import './PromotionSection.css';
-import LoadingIndicator from '../../UI/LoadingIndicator';
 import mealA from '../../../asset/mealA.jpg';
 import mealB from '../../../asset/mealB.jpg';
 import mealC from '../../../asset/mealC.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import  Spinner from 'react-bootstrap/Spinner';
 
 // const mealDatas = [
 //     {
@@ -77,7 +78,10 @@ function PromotionSection (props) {
 
     return (
         <ScreenSection id="promotion-section">
-            {isLoading ? <LoadingIndicator /> :
+            {isLoading ? 
+            <Spinner animation="border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </Spinner> :
 
             <div className='wrapper'>
                 <MenuItem mealDatas={data[0]} imgSrc={mealA} setAddFeedback={props.setAddFeedback}/>

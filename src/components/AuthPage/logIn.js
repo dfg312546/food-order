@@ -36,7 +36,7 @@ function LogIn () {
         } else if (error.code === 'auth/wrong-password') {
           setErrorMessage('Wrong password. Please check your password.');
         } else {
-          setErrorMessage('An error occurred. Please try again later.');
+          setErrorMessage('Invalid account or passwords. Please try again later.');
         }
         console.log(error);
     } finally {

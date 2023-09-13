@@ -1,0 +1,30 @@
+.mapPageContainer {
+  background-color: black;
+  min-height: 92vh;
+  display: flex;
+  padding-top: 30px;
+}
+
+.mapStyle {
+  height: 350px;
+  width: 500px;
+  margin-left: 50px;
+  /* border: 2px solid grey; */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.storeInfo {
+  height: 350px;
+  margin-left: 50px;
+}
+
+.storeInfo p {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.storeInfo h3 {
+  color: white;
+  font-weight: bold;
+}

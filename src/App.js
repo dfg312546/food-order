@@ -8,7 +8,8 @@ import QAPage from './Pages/q&aPage';
 import ErrorPage from './Pages/Error';
 import ContactPage from '../src/Pages/ContactPage';
 import LogInPage from '../src/Pages/LogInPage';
-import SignUpPage from '../src/Pages/SignUpPage'
+import SignUpPage from '../src/Pages/SignUpPage';
+import MapApp from './components/StorePage/map';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: '/contact',element: <ContactPage />},
       { path: '/login',element: <LogInPage />},
       { path: '/signUp',element: <SignUpPage />},
+      { path: '/offlineStore',element: <MapApp />},
     ]
   }
 ]);
