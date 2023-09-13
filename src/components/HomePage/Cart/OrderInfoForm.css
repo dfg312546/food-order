@@ -42,13 +42,22 @@
   margin-left: 0.5rem;
 }
 
-.invalid label {
-  /* color: #ca3e51; */
-}
 
 .invalid input {
   border-color: #aa0b20;
   background-color: #ffeff1;
+}
+
+.checkoutContainer {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.checkoutContainer h3 {
+  margin-top: 20px;
 }
 
 .checkoutButtonStyle {

@@ -87,7 +87,7 @@ function OrderInfoForm (props) {
 
 
   return (
-    <>
+    <div className='orderInfo'>
     {!checkoutDone && !isSubmitting &&
     <form className='form' onSubmit={confirmHandler}>
       <div className='checkoutInputContainer'>
@@ -117,18 +117,22 @@ function OrderInfoForm (props) {
     </form>}
 
     {!checkoutDone && isSubmitting && 
+    <div className='checkoutContainer'>
     <Spinner animation="border" role="status">
       <span className="visually-hidden">Loading...</span>
-    </Spinner>}
+    </Spinner>
+    </div>
+    }
 
     {checkoutDone && isSubmitting &&
-    <div>
-      結帳成功！
+    <div className='checkoutContainer'>
+      
+      <h3>結帳成功！</h3>
       <div className='checkoutButtonStyle'>
         <Button className='cancelCheckoutButton' onClick={props.hideCartHandler}>關閉</Button>
       </div>
     </div>}
-    </>
+    </div>
   )
 };
 

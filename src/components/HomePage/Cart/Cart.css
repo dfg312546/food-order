@@ -1,6 +1,7 @@
 .cartItemsStyle {
   list-style: none;
   overflow-y: auto;
+  padding-left: 0;
 }
 
 .totalAmountStyle {
