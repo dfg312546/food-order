@@ -1,10 +1,14 @@
+import StateContext from '../../../store/context';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HamburgerMenuModal from "../../UI/hamburgerMenuModal";
 import './hamburgerMenu.css'
 import { FaUserCheck,FaFire,FaThumbsUp,FaCircleXmark, FaGifts,FaPersonWalking } from "react-icons/fa6";
 import Button from '../../UI/Button'
+import { auth } from '../../AuthPage/auth';
 
 function HamburgerMenu(props) {
+  const Ctx = useContext(StateContext)
   const navigate = useNavigate();
 
   const handleClick = (anchor) => (event) => {
@@ -32,10 +36,17 @@ function HamburgerMenu(props) {
 
   return (
   <HamburgerMenuModal hamburgerMenu={props.hamburgerMenu} setHamburgerMenu={props.setHamburgerMenu}>
+    <div className='hamburgerMenuContainer' >
     <header className="hamburgerMenuHeader">
       <h2>LOGO</h2>
       <FaCircleXmark onClick={closeHamburgerMenu}/>
     </header>
+
+    <div className='hamburgerMenuBody'>
+    <div className='hamburgerMenuUser'>
+      <img src={auth.currentUser.photoURL} alt="profile"/>
+      <p>Hello ! {auth.currentUser.displayName}</p>
+    </div>
 
     <ul className='hamburgerMenuUl'>
       <li className='hamburgerMenuli' onClick={handleClick("promotion")}>
@@ -55,12 +66,20 @@ function HamburgerMenu(props) {
         <span>Members only</span>
       </li>
     </ul>
+    </div>
 
-    <Button className='hamburgerMenuBtn' onClick={navToLogIn}>
-      <FaPersonWalking />
-      <span>Log In</span>
-    </Button>
 
+    <div className='hamburgerMenuFooter' >
+    {Ctx.isLogIn ? 
+      <Button onClick={Ctx.logOut} className='hamburgerMenuBtn'>Log Out</Button>
+       :
+      <Button className='hamburgerMenuBtn' onClick={navToLogIn}>
+        <FaPersonWalking />
+        <span>Log In</span>
+      </Button>
+    }
+    </div>
+    </div>
   </HamburgerMenuModal>
   )
 }

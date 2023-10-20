@@ -15,6 +15,7 @@
 }
 
 .mainNavStyle h1 {
+  font-weight: bold;
   margin: 10px 20px;
 }
 
@@ -24,6 +25,7 @@
   justify-content: space-around;
   margin: auto 0;
   max-width: 800px;
+  padding-left: 0;
 }
 
 .mainNavStyle ul .li {
@@ -44,6 +46,7 @@
 }
 .mainNavStyle section p {
   text-align: center;
+  margin-bottom: 0;
 }
 
 .mainNavStyle .li a:hover {
@@ -52,6 +55,21 @@
 
 .mainNavStyle .li a.active {
   color: #e74c3c;
+}
+
+.logInBtnAndProfile {
+  
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+.profile img {
+  height: 50px;
+  width: 50px;
+  border-radius: 99999px;
+  margin-left: 20px;
 }
 
 .logInButtonStyle {

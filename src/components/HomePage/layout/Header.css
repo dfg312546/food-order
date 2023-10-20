@@ -65,6 +65,7 @@
     justify-content: space-around;
     text-align: center;
     margin: auto 5vw;
+    padding-left: 0;
 }
 
 .headerStyle .headerUl .li {

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth,signInWithEmailAndPassword,createUserWithEmailAndPassword,signOut } from 'firebase/auth'
+import { getAuth,signInWithEmailAndPassword,createUserWithEmailAndPassword,signOut,GoogleAuthProvider,signInWithPopup } from 'firebase/auth'
 
 const firebaseConfig = initializeApp({
   apiKey: "AIzaSyDGWKpsh_cBRgUgMjF5q5HCI3uJT-rQ4U8",
@@ -10,7 +10,7 @@ const firebaseConfig = initializeApp({
   messagingSenderId: "869359762545",
   appId: "1:869359762545:web:4f3e081b6c591a54ee6fd0"
 });
-const auth = getAuth(firebaseConfig);
+export const auth = getAuth(firebaseConfig);
 
 export const loginEmailPassword = async (email,password) => {
   try {
@@ -23,7 +23,7 @@ export const loginEmailPassword = async (email,password) => {
     console.log(error);
     throw error;
   }
-}
+};
 
 export const createAccount = async (email,password) => {
   try {
@@ -36,8 +36,19 @@ export const createAccount = async (email,password) => {
     console.log(error);
     throw error;
   }
-}
+};
 
 export const logOut = async () => {
   signOut(auth)
-}
+};
+
+export const GoogleProvider = new GoogleAuthProvider()
+
+export const loginWithGoogle = async () => {
+  signInWithPopup(auth,GoogleProvider).then((result) => {
+    console.log(result)
+
+  }).catch((error) => {
+    console.log(error)
+  })
+};

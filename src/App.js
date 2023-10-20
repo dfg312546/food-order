@@ -2,27 +2,30 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { QueryClient,QueryClientProvider } from '@tanstack/react-query';
 import ContextProvider from './store/contextProvider';
 
-import RootPage from './Pages/RootPage';
-import HomePage from './Pages/HomePage';
-import QAPage from './Pages/q&aPage';
-import ErrorPage from './Pages/Error';
-import ContactPage from '../src/Pages/ContactPage';
-import LogInPage from '../src/Pages/LogInPage';
-import SignUpPage from '../src/Pages/SignUpPage';
+
+import RootPage from './components/RootPage';
+import HomeContent from '../src/components/HomePage/layout/HomeContent'
+import QA from './components/Q&A-Page/Q&A';
+import Error from './components/Error';
+import ContactForm from '../src/components/ContactPage/contactForm'
+import LogIn from '../src/components/AuthPage/logIn'
+import SignUp from './components/AuthPage/signUp';
 import MapApp from './components/StorePage/map';
+import Profile from './components/ProfilePage/Profile';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <RootPage />,
-    errorElement: <ErrorPage />,
+    errorElement: <Error />,
     children: [
-      { index: true, element: <HomePage />},
-      { path: '/Q&A', element: <QAPage />},
-      { path: '/contact',element: <ContactPage />},
-      { path: '/login',element: <LogInPage />},
-      { path: '/signUp',element: <SignUpPage />},
+      { index: true, element: <HomeContent />},
+      { path: '/Q&A', element: <QA />},
+      { path: '/contact',element: <ContactForm/>},
+      { path: '/login',element: <LogIn />},
+      { path: '/signUp',element: <SignUp />},
       { path: '/offlineStore',element: <MapApp />},
+      { path: '/profile',element: <Profile />}
     ]
   }
 ]);
@@ -40,3 +43,4 @@ function App() {
 }
 
 export default App;
+

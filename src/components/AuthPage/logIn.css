@@ -44,10 +44,19 @@
   justify-content: center;
   margin: 10px 0;
 }
+.logInBtnContainer section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
 
 .logInBtn {
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: white;
   padding: 0.5rem;
-  margin: 10px 10px;
 
 }
 .logInBtn:hover {
@@ -62,7 +71,26 @@
   
 }
 
+.logInWithGoogle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+.logInWithGoogle img {
+  margin-left: 5px;
+  width: 19px;
+  height: 19px;
+}
+
 .signUpBtn {
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: white;
   padding: 0.5rem;
   margin: 10px 10px;
 }

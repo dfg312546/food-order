@@ -4,8 +4,9 @@ import { NavLink,Link } from 'react-router-dom';
 import { FaHouseChimney } from "react-icons/fa6";
 import { MdPlace,MdQuestionMark } from "react-icons/md";
 import { BiSolidMessageEdit } from "react-icons/bi";
-import Button from "./UI/Button";
+import Button from '../components/UI/Button'
 import style from './MainNavigation.module.css'
+import { auth } from './AuthPage/auth';
 
 function MainNavigation () {
   const Ctx = useContext(StateContext);
@@ -57,14 +58,19 @@ function MainNavigation () {
           </NavLink>
         </li>
     </ul>
-    <section>
+    <section className={style.logInBtnAndProfile}>
         {Ctx.isLogIn ? 
-          <p>Hello !<br /> {Ctx.user.email}</p> : 
+          <div className={style.profile}>
+            <p>Hello !<br /> {auth.currentUser.displayName}</p>
+            <Link to='/profile'>
+              { auth.currentUser.photoURL && <img src={auth.currentUser.photoURL} alt="profile"/> }
+            </Link>
+          </div> : 
           <Button className={style.logInButtonStyle}>
             <Link to='/login'>Log In</Link>
           </Button>}
 
-          {Ctx.isLogIn && <Button onClick={Ctx.logOut} className={style.logInButtonStyle}>Log Out</Button>}
+          {/* {Ctx.isLogIn && <Button onClick={Ctx.logOut} className={style.logInButtonStyle}>Log Out</Button>} */}
 
     </section>
   </nav>

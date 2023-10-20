@@ -1,13 +1,13 @@
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
-import { loginEmailPassword as logInHandler } from "./auth";
+import { Link,useNavigate } from 'react-router-dom';
+import { loginEmailPassword as logInHandler,loginWithGoogle,auth } from "./auth";
 import './logIn.css'
 import StateContext from "../../store/context";
 import { useContext,useState } from 'react';
-import Button from "../UI/Button";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  Spinner from 'react-bootstrap/Spinner';
 import Alert from 'react-bootstrap/Alert';
+import googleIcon from '../../asset/google.svg'
 
 
 function LogIn () {
@@ -15,6 +15,8 @@ function LogIn () {
   const [isError, setIsError] = useState(false);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [errorMessage,setErrorMessage] = useState('')
+  const navigate = useNavigate();
+  console.log(auth)
 
   const { register, handleSubmit, setValue, formState: {errors} } = useForm({
     defaultValues: {
@@ -45,6 +47,14 @@ function LogIn () {
         setValue("userPasswords", '');
     }
   };
+
+  // const logInWithGoogleHandler = () => {
+  //   loginWithGoogle();
+  // }
+
+  if ( auth.currentUser ) {
+    navigate('/')
+  }
 
   return (
     <div className="logInFormContainer">
@@ -78,15 +88,18 @@ function LogIn () {
         </div>
 
         <div className="logInBtnContainer">
-          <Button className="logInBtn" type='submit'>
+          <section>
+          <button className="logInBtn" type='submit'>
             Log In
-          </Button>
+          </button>
+          <button className="logInWithGoogle" type="button" onClick={loginWithGoogle}>Sign in with<img src={googleIcon} alt="google"/></button>
+          </section>
 
           <p>Don't have an account ?</p>
 
-          <Button className="signUpBtn">
+          <button className="signUpBtn">
             <Link to='/signUp'>Sign Up</Link>
-          </Button>
+          </button>
         </div>
 
       </form>)};

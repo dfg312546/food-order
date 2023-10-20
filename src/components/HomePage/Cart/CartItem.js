@@ -78,7 +78,7 @@ function CartItem (props) {
     <>
       <li className='cartItemStyle'>
         <div className='cartItemTextStyle'>
-          商品名稱：{'套餐' + props.id}
+          商品名稱：{props.name}
 
           
           <div className='cartItemNumberStyle'>
@@ -93,11 +93,12 @@ function CartItem (props) {
           </div>
         </div>
         <div className='cartItemPriceStyle'>
-          <div>金額：${
-                      props.amount * props.price % 1 === 0
-                      ? props.amount * props.price
-                      : (props.amount * props.price).toFixed(2)
-                      }
+          <div>金額：$
+            {
+              props.amount * props.price % 1 === 0
+              ? props.amount * props.price
+              : (props.amount * props.price).toFixed(2)
+            }
           </div>
           <Button className='removeCartItemButtonStyle' onClick={removeCartItem}>移除商品</Button>
         </div>

@@ -2,7 +2,6 @@ import { useState,useEffect } from "react";
 import StateContext from "./context";
 import { initializeApp } from "firebase/app";
 import { getAuth,onAuthStateChanged } from 'firebase/auth'
-import { logOut } from "../components/AuthPage/auth";
 
 const firebaseConfig = initializeApp({
   apiKey: "AIzaSyDGWKpsh_cBRgUgMjF5q5HCI3uJT-rQ4U8",
@@ -83,11 +82,6 @@ function ContextProvider (props) {
     });
     return () => monitorAuthState();
   }, []);
-
-  function logOutHandler() {
-    logOut();
-    setIsLogIn(false)
-  }
   
   
   
@@ -106,7 +100,7 @@ function ContextProvider (props) {
     user:userContent,
     isLogIn:isLogIn,
     setIsLogIn:setIsLogIn,
-    logOut:logOutHandler
+
   };
 
   return (

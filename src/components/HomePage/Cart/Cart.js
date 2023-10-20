@@ -20,6 +20,7 @@ function Cart (props) {
             id={item.id} 
             amount={item.amount} 
             price={item.price} 
+            name={item.name}
         />
         )
 
