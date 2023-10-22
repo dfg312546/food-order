@@ -92,6 +92,7 @@
 
     .mobileMenuLeft {
         display: flex;
+
     }
 
     .mobileImgStyle {
@@ -107,6 +108,8 @@
     }
 
     .mobileLabelStyle {
+        display: flex;
+        justify-content: space-between;
         color:white;
         font-weight: bold;
     }
@@ -115,8 +118,13 @@
         font-size: 0.8rem;
         margin-bottom: 20px;
     }
+
+
+    .mobileMenuRight {
+        margin-left: 10px;
+    }
     .mobileBtnStyle {
-        padding: 0.25rem;
+        padding: 0.1rem;
         font-size: 1rem;
         border-radius: 5px;
     }

@@ -43,10 +43,12 @@ function HamburgerMenu(props) {
     </header>
 
     <div className='hamburgerMenuBody'>
-    <div className='hamburgerMenuUser'>
-      <img src={auth.currentUser.photoURL} alt="profile"/>
-      <p>Hello ! {auth.currentUser.displayName}</p>
-    </div>
+    { Ctx.isLogIn &&
+      <div className='hamburgerMenuUser'>
+        <img src={auth.currentUser.photoURL} alt="profile"/>
+        <p>Hello ! {auth.currentUser.displayName}</p>
+      </div>
+     }
 
     <ul className='hamburgerMenuUl'>
       <li className='hamburgerMenuli' onClick={handleClick("promotion")}>

@@ -41,13 +41,16 @@ function MenuItem (props) {
             <div className="mobileMenuLeft">
                 <img className='mobileImgStyle' src={props.imgSrc} alt="套餐"/>
                 <div className='mobileMenuText'>
-                    <label className="mobileLabelStyle">{props.mealDatas.name}</label>  
+                    <label className="mobileLabelStyle">
+                        <span>{props.mealDatas.name}</span>
+                        <span>$ {props.mealDatas.price}</span>
+                    </label>
                     <p className="mobileDescriptionStyle">{props.mealDatas.description}</p>
                 </div>
             </div>
 
             <div className="mobileMenuRight">
-                <Button className='mobileBtnStyle' onClick={addClickHandler}>Add</Button>
+                <Button className='mobileBtnStyle' onClick={addClickHandler}><AddIcon /></Button>
             </div>
         </div>
         </>

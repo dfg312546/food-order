@@ -97,7 +97,7 @@ function LogIn () {
 
           <p>Don't have an account ?</p>
 
-          <button className="signUpBtn">
+          <button className="signUpBtn" type="button">
             <Link to='/signUp'>Sign Up</Link>
           </button>
         </div>

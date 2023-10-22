@@ -2,6 +2,7 @@
   background-color: black;
   min-height: 92vh;
   display: flex;
+  align-items: center;
   padding-top: 30px;
 }
 
@@ -16,7 +17,7 @@
 
 .storeInfo {
   height: 350px;
-  margin-left: 50px;
+  margin: 25px;
 }
 
 .storeInfo p {
@@ -27,4 +28,18 @@
 .storeInfo h3 {
   color: white;
   font-weight: bold;
+}
+
+
+@media  (max-width:550px) {
+  .mapPageContainer {
+    flex-direction: column;
+  }
+  .mapStyle {
+    height: 350px;
+    width: 90vw;
+    margin-left: 0px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
 }
