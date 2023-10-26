@@ -1,6 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Wrapper} from "@googlemaps/react-wrapper";
 import './map.css'
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 const render = (status) => {
   return <h1>{status}</h1>;
@@ -10,6 +13,8 @@ function Map(props) {
   const { center, zoom } = props;
   const mapRef = useRef(null);
   const [map, setMap] = useState(null);
+  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
 
   useEffect(() => {
     if (mapRef.current && !map) {
@@ -43,7 +48,7 @@ function MapApp() {
 
   return (
     <div className="mapPageContainer">
-      <Wrapper apiKey={"AIzaSyBfnCJRbYPvPr-oMJi3EhChWKlNbEaAT_E"} render={render}>
+      <Wrapper apiKey={apiKey} render={render}>
         <Map center={center} zoom={zoom} />
       </Wrapper>
 
