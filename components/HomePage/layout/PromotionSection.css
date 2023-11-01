@@ -1,0 +1,26 @@
+#promotion-section {
+    background-color: black;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* height: 75vh; */
+    width: 100vw;
+}
+
+@media (max-width:1250px ) {
+    .wrapper {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width:550px) {
+    .wrapper {
+        flex-direction: column;
+        flex-wrap:nowrap;
+        align-items: start;
+    }
+}

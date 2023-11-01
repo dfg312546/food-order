@@ -1,0 +1,56 @@
+.backdrop2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal2 {
+  position: fixed;
+  top: 30%;
+  left: 34%;
+  width: 33%;
+  /* height: 50%; */
+  background-color:#CEFFCE;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  animation: slide-down 300ms ease-out forwards;
+  overflow: auto;
+}
+
+.content2 {
+  color:#006000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media  (max-width:550px) {
+  .content2 {
+    font-size: 1rem;
+  }
+  .modal2 {
+    top: 30%;
+    left: 5%;
+    width: 90%;
+  }
+}

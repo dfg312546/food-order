@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.faqPage-container {
+  font-family: 'Muli', sans-serif;
+  background-color: black;
+  min-height: 92vh;
+}
+
+.faqPage-title {
+  color:	#ECECFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0px;
+  padding:20px;
+}
+
+.faq-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.faq-title {
+  margin: 0 35px 0 0;
+}

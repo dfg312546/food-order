@@ -1,0 +1,75 @@
+.hamburgerMenuContainer {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburgerMenuHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.hamburgerMenuHeader h2 {
+  font-weight: bold;
+}
+
+.hamburgerMenuBody {
+  height: 70vh;
+}
+
+.hamburgerMenuUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hamburgerMenuUser img {
+  border-radius: 99999px;
+  height: 15vh;
+  margin-bottom: 2vh;
+}
+.hamburgerMenuUser p {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.hamburgerMenuUl {
+  text-align: left;
+  padding-left: 0;
+}
+
+.hamburgerMenuli{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 20px auto;
+  list-style: none;
+}
+
+.hamburgerMenuli span {
+
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.hamburgerMenuIcon{
+
+  width:40px;
+  height: auto;
+  margin: 0 10px 0 0;
+}
+
+.hamburgerMenuFooter {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.hamburgerMenuBtn {
+  font-weight: bold;
+}
+
