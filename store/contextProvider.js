@@ -5,6 +5,7 @@ import { auth } from "../components/AuthPage/auth";
 
 //
 
+
 function ContextProvider (props) {
   const [cartItems,setCartItems] = useState([])
   const [totalAmount,setTotalAmount] = useState(0)
